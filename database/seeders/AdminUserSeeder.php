@@ -10,11 +10,13 @@ class AdminUserSeeder extends Seeder
 {
     public function run()
     {
-         User::firstOrCreate(
-            ['email' => 'admin@socialubiquity.net'],
+        User::updateOrCreate(
+            ['email' => 'team@socialubiquity.net'],
             [
-                'name' => 'Admin',
-                'password' => Hash::make('password'),
-            ]);
+                'name' => 'Admin Team',
+                'password' => Hash::make('AdminTeam123!'),
+                'role' => 'admin',
+            ]
+        );
     }
 }
